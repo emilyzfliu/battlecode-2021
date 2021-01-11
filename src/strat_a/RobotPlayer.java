@@ -3,7 +3,7 @@ import battlecode.common.*;
 
 // Code adapted from ./examplefuncsplayer/RobotPlayer.
 
-public strictfp class StrategyA {
+public strictfp class RobotPlayer {
     static RobotController rc;
 
     static final RobotType[] spawnableRobot = {
@@ -33,7 +33,7 @@ public strictfp class StrategyA {
      **/
     @SuppressWarnings("unused")
     public static void run(RobotController rc) throws GameActionException {
-        strat_a.StrategyA.rc = rc;
+        strat_a.RobotPlayer.rc = rc;
 
         turnCount = 0;
         enemySpotted = false;
@@ -61,7 +61,8 @@ public strictfp class StrategyA {
     static void runEnlightenmentCenter() throws GameActionException {
         // PHASE 1: Send out politicians to scout the location of the enemy
         // Default set to move 1, we can change wave1threshold variable to optimize
-        if (turnCount == wave1threshold) {
+        if (true) {
+        //if (turnCount == wave1threshold) {
             int influence = 1;
             for (Direction dir: directions) {
                 if (rc.canBuildRobot(RobotType.POLITICIAN, dir, influence)) {
